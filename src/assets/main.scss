@@ -1,0 +1,23 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+.center-absolute-y {
+  transform: translateY(-50%);
+  top: 50%;
+  position: absolute;
+}
+
+.center-absolute-x {
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+}
+
+.center-absolute {
+  @extend .center-absolute-x;
+  @extend .center-absolute-y;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
