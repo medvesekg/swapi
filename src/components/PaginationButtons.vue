@@ -45,7 +45,7 @@ const emit = defineEmits(['pageChanged'])
         <a class="page-link" href="#">Previous</a>
       </li>
       <li class="page-item">
-        <a class="page-link">{{ currentPage }}</a>
+        <a class="page-link" data-testid="current-page">{{ currentPage }}</a>
       </li>
       <li
         @click="!nextDisabled && emit('pageChanged', currentPage + 1)"
