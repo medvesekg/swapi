@@ -25,7 +25,6 @@ describe('LoadingOverlay', () => {
         default: '<div>content</div>',
       },
     })
-    console.log(wrapper.find('.overlay'))
     expect(wrapper.find('.overlay').exists()).toBe(true)
   })
 
@@ -38,7 +37,6 @@ describe('LoadingOverlay', () => {
         default: '<div>content</div>',
       },
     })
-    console.log(wrapper.find('.overlay'))
     expect(wrapper.find('.overlay').exists()).toBe(false)
   })
 })
