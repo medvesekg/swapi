@@ -16,7 +16,9 @@ defineProps({
         </div>
       </div>
     </div>
-    <slot />
+    <div :class="{ blur: loading }">
+      <slot />
+    </div>
   </div>
 </template>
 <style scoped>
@@ -25,5 +27,10 @@ defineProps({
   height: 100%;
   width: 100%;
   background-color: rgb(0 0 0 / 0.05);
+  z-index: 1;
+}
+
+.blur {
+  filter: blur(2px);
 }
 </style>
