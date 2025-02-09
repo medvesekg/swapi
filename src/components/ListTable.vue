@@ -28,8 +28,8 @@ function prettifyColumnName(name: string) {
 }
 
 function extractId(url: string) {
-  const splitUrl = url.split('/')
-  return splitUrl[splitUrl.length - 2]
+  const splitUrl = url.split('/').filter((p) => p)
+  return splitUrl[splitUrl.length - 1]
 }
 </script>
 <template>

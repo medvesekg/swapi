@@ -20,11 +20,3 @@ describe('BackButton', () => {
     expect(router.currentRoute.value.fullPath).toBe('/a/b')
   })
 })
-
-function wait(timeout: number) {
-  return new Promise<void>((resolve) => {
-    setTimeout(() => {
-      resolve()
-    }, timeout)
-  })
-}

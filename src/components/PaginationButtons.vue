@@ -39,6 +39,7 @@ const emit = defineEmits(['pageChanged'])
       <li
         @click="!prevDisabled && emit('pageChanged', currentPage - 1)"
         class="page-item cursor-not-allowed"
+        data-testid="prev"
         :class="{ disabled: prevDisabled }"
       >
         <a class="page-link" href="#">Previous</a>
@@ -49,6 +50,7 @@ const emit = defineEmits(['pageChanged'])
       <li
         @click="!nextDisabled && emit('pageChanged', currentPage + 1)"
         class="page-item"
+        data-testid="next"
         :class="{ disabled: nextDisabled }"
       >
         <a class="page-link" href="#">Next</a>

@@ -1,10 +1,11 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { mount } from '@vue/test-utils'
+import { flushPromises, mount } from '@vue/test-utils'
 
 import ListTable from '../ListTable.vue'
 import router from '@/router'
 import { createTestingPinia } from '@pinia/testing'
+import { RouterLink } from 'vue-router'
 
 describe('ListTable', () => {
   it('Lists all rows', async () => {
@@ -42,5 +43,26 @@ describe('ListTable', () => {
       },
     })
     expect(wrapper.text()).toContain('Abc def')
+  })
+
+  it('Creates a link to the details page', async () => {
+    await router.isReady()
+    router.push('test')
+    await flushPromises()
+    const wrapper = mount(ListTable, {
+      props: {
+        columns: ['a'],
+        rows: [
+          {
+            a: 'a',
+            url: 'http://api.com/1',
+          },
+        ],
+      },
+      global: {
+        plugins: [router, createTestingPinia({ createSpy: vi.fn })],
+      },
+    })
+    expect(wrapper.findComponent(RouterLink).props('to')).toBe('/test/1')
   })
 })

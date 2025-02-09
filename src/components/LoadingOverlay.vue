@@ -9,7 +9,7 @@ defineProps({
 </script>
 <template>
   <div style="position: relative">
-    <div v-if="loading" class="overlay">
+    <div v-if="loading" class="overlay" data-test="overlay">
       <div class="center-absolute center-absolute-x">
         <div class="spinner-border" role="status">
           <span class="visually-hidden">Loading...</span>
