@@ -4,9 +4,10 @@ import { removeTrailingSlash } from '@/utils/path'
 import { defineStore } from 'pinia'
 
 const BASE_URL = 'https://swapi.dev/api'
-const cache: { [key: string]: unknown } = {}
 
 export const useApiStore = defineStore('api', () => {
+  const cache: { [key: string]: unknown } = {}
+
   async function getResources(
     resource: string,
     page: number,

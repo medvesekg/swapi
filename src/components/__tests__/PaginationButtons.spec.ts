@@ -3,7 +3,6 @@ import { describe, expect, it } from 'vitest'
 import { flushPromises, mount } from '@vue/test-utils'
 
 import PaginationButtons from '../PaginationButtons.vue'
-import { wrap } from 'module'
 
 describe('PaginationButtons', () => {
   it('disables next button if next page does not exist', async () => {
